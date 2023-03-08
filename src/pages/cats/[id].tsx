@@ -57,15 +57,18 @@ const Headpic = styled.div`
 `;
 const Recommend = styled.div`
   background-color: white;
-  border: 1px solid black;
-  h5 {
-    background-color: #8cb6df;
-    max-width: 300px;
-    border-radius: 50px;
-    border: 1px solid black;
-    box-shadow: 2px 2px black;
-  }
+  /* border: 1px solid black; */
 `;
+
+const RecHead = styled.div`
+  background-color: #8cb6df;
+  max-width: 90%;
+  border-radius: 50px;
+  border: 1px solid black;
+  box-shadow: 2px 2px black;
+  font-size: 18px;
+`;
+
 const Detail = styled.div`
   background-color: white;
   border: 1px solid black;
@@ -95,6 +98,7 @@ const Line = styled.div`
 const RecCard = styled.div`
   text-align: center;
   font-size: 22px;
+  margin: 10px;
   img {
     width: 100%;
     height: 200px;
@@ -153,7 +157,7 @@ function CatDetail() {
       </ContainerHead>
       <ContainerDetail className="p-2">
         <div className="row px-3">
-          <div className="col-9 pl-0">
+          <div className="col-12 col-lg-9 px-1">
             <Headpic className="text-center">
               <img className="img-fluid" src={`/${data?.pic}`} />
             </Headpic>
@@ -207,26 +211,29 @@ function CatDetail() {
               </div>
             </Detail>
           </div>
-          <Recommend className="col-3">
-            <h5 className="m-3 p-2 text-center">Recommended แมว</h5>
-
-            <RecCard>
-              {filteredList.map((item) => (
-                <Link key={item.id} href={`/cats/${item.id}`}>
-                  <div
-                    key={item.id}
-                    style={{
-                      border: '1px solid grey',
-                      borderRadius: '5px',
-                    }}
-                    className="mb-3"
-                  >
-                    <img src={`/${item.pic}`} />
-                    <div>{item.name}</div>
-                  </div>
-                </Link>
-              ))}
-            </RecCard>
+          <Recommend className="col-12 col-lg-3 px-1">
+            <div style={{ border: '1px solid black', height: '100%' }}>
+              <RecHead className="m-3">
+                <div className="p-2 text-center ">Recommended แมว</div>
+              </RecHead>
+              <RecCard>
+                {filteredList.map((item) => (
+                  <Link key={item.id} href={`/cats/${item.id}`}>
+                    <div
+                      key={item.id}
+                      style={{
+                        border: '1px solid grey',
+                        borderRadius: '5px',
+                      }}
+                      className="mb-3"
+                    >
+                      <img src={`/${item.pic}`} />
+                      <div>{item.name}</div>
+                    </div>
+                  </Link>
+                ))}
+              </RecCard>
+            </div>
           </Recommend>
         </div>
       </ContainerDetail>
