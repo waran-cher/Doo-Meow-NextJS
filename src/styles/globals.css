@@ -1,32 +1,26 @@
 body {
-  font-family: "Noto Sans Thai", sans-serif;
+  font-family: 'Noto Sans Thai', sans-serif;
+  background-color: #dafab0;
 }
-.headd {
-  text-align: center;
-  color: rgb(80, 154, 214);
-}
-.headd h1 {
-  font-size: 50px;
-}
-
-.line {
-  max-width: 100%;
-  margin: auto;
-  border-top: 1px solid rgb(80, 154, 214);
-}
-
 .d-flex {
   gap: 20px;
 }
 .form-control {
-  color: yellowgreen;
+  color: black;
 }
 .form-control:focus {
-  color: yellowgreen;
+  color: black;
+  border: 1px solid black;
 }
 ::placeholder {
   font-weight: 100;
 }
 
-.div {
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(84, 83, 83);
+  text-decoration: none;
 }

@@ -1,28 +1,48 @@
 import { useState, useEffect } from 'react';
 import { list } from '@/utils/constants';
 import Link from 'next/link';
-import { Category, Content, Detail, Photo, Thumbnail, Topic } from './styled';
+import { Category, Content, Detail, Photo, Thumbnail, Name } from './styled';
+import styled from 'styled-components';
+
+const Card = styled.div`
+  background-color: white;
+  padding: 20px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 10px 10px;
+`;
 
 function CatCard({
   item,
 }: {
   item: {
-    topic: string;
+    id: number;
+    name: string;
     pic: string;
+    sex: string;
+    age: number;
+    breed: string;
+    color: string;
     detail: string;
-    category: { label: string; link: string }[];
+    category: {
+      label: string;
+      link: string;
+    }[];
     thumbnail: string[];
   };
 }) {
   return (
-    <div className="my-4">
+    <Card className="my-4">
       <div className="row">
         <div className="col-12 col-sm-3 col-md-5 text-center">
           <Photo src={item.pic} className="photo" />
         </div>
         <div className="col-12 col-sm-9 col-md-7">
           <Content className="content">
-            <Topic className="topic">{item.topic}</Topic>
+            <Link href={`/cats/${item.id}`}>
+              {' '}
+              <Name className="name">{item.name}</Name>{' '}
+            </Link>
             <Detail className="detail mb-2">
               {item.detail}
               {/* <a href="#">อ่านต่อ</a> */}
@@ -43,8 +63,7 @@ function CatCard({
                 },
               )}
             </Category>
-
-            <Thumbnail className="d-flex thumbnail-list ">
+            <Thumbnail className="d-flex ">
               {item.thumbnail.map((img: any) => {
                 return <img key={img} src={img} className="img-fluid" />;
               })}
@@ -52,7 +71,7 @@ function CatCard({
           </Content>
         </div>
       </div>
-    </div>
+    </Card>
   );
 }
 

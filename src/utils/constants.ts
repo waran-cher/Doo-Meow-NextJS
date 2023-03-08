@@ -1,42 +1,70 @@
-export const list = [
+export interface ICat {
+  id: number;
+  name: string;
+  pic: string;
+  sex: string;
+  age: number;
+  breed: string;
+  color: string;
+  detail: string;
+  category: {
+    label: string;
+    link: string;
+  }[];
+  thumbnail: string[];
+}
+
+export const list: ICat[] = [
   {
     id: 1,
-    topic: "น้องหอมแดง ไตรมาส",
-    pic: "pic/IMG_5516.jpg",
+    name: 'หอมแดง ไตรมาส',
+    pic: 'pic/hom1.jpg',
+    sex: 'Female',
+    age: 2,
+    breed: 'Scottish Fold',
+    color: 'Tabby Silver',
     detail:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus placerat felis, a eleifend arcu facilisis eget. Quisque sit amet porttitor enim, nec congue eros. Suspendisse potenti. Pellentesque ut finibus purus. Etiam id lorem ac odio aliquet iaculis quis ac justo. Nullam elit dui, vehicula sed lectus sed, bibendum dapibus justo. Duis tincidunt aliquet dictum. Nulla luctus massa eget quam rhoncus, id pharetra ex vehicula.",
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus placerat felis, a eleifend arcu facilisis eget. Quisque sit amet porttitor enim, nec congue eros. Suspendisse potenti. Pellentesque ut finibus purus. Etiam id lorem ac odio aliquet iaculis quis ac justo. Nullam elit dui, vehicula sed lectus sed, bibendum dapibus justo. Duis tincidunt aliquet dictum. Nulla luctus massa eget quam rhoncus, id pharetra ex vehicula.',
     category: [
-      { label: "แตงกวา", link: "http://www.youtube.com/" },
-      { label: "วอฟเฟิล", link: "http://www.facebook.com/" },
-      { label: "โอวัลติน", link: "http://www.google.com/" },
+      { label: 'Scottish Fold', link: 'http://www.youtube.com/' },
+      { label: 'Tabby Silver', link: 'http://www.facebook.com/' },
+      { label: 'Female', link: 'http://www.google.com/' },
     ],
-    thumbnail: ["pic/IMG_5167.jpg", "pic/IMG_5507.jpg", "pic/IMG_5594.JPG"],
+    thumbnail: ['pic/hom2.jpg', 'pic/hom3.jpg', 'pic/hom4.jpg'],
   },
   {
     id: 2,
-    topic: "น้องไก่",
-    pic: "pic/IMG_1755.JPG",
+    name: 'โมจิ',
+    pic: 'pic/moji3.jpg',
+    sex: 'Male',
+    age: 3,
+    breed: 'Scottish Fold',
+    color: 'Silver Blue',
     detail:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus placerat felis, a eleifend arcu facilisis eget. Quisque sit amet porttitor enim, nec congue eros. Suspendisse potenti. Pellentesque ut finibus purus. Etiam id lorem ac odio aliquet iaculis quis ac justo. Nullam elit dui, vehicula sed lectus sed, bibendum dapibus justo. Duis tincidunt aliquet dictum. Nulla luctus massa eget quam rhoncus, id pharetra ex vehicula.",
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus placerat felis, a eleifend arcu facilisis eget. Quisque sit amet porttitor enim, nec congue eros. Suspendisse potenti. Pellentesque ut finibus purus. Etiam id lorem ac odio aliquet iaculis quis ac justo. Nullam elit dui, vehicula sed lectus sed, bibendum dapibus justo. Duis tincidunt aliquet dictum. Nulla luctus massa eget quam rhoncus, id pharetra ex vehicula.',
     category: [
-      { label: "หมู", link: "http://www.google.com/" },
-      { label: "หมา", link: "http://www.facebook.com/" },
-      { label: "ปลา", link: "http://www.youtube.com/" },
+      { label: 'Scottish Fold', link: 'http://www.google.com/' },
+      { label: 'Silver Blue', link: 'http://www.facebook.com/' },
+      { label: 'Male', link: 'http://www.youtube.com/' },
     ],
-    thumbnail: ["pic/IMG_1754.JPG", "pic/IMG_1756.JPG", "pic/IMG_1757.JPG"],
+    thumbnail: ['pic/moji2.jpg', 'pic/moji1.jpg', 'pic/moji4.jpg'],
   },
   {
     id: 3,
-    topic: "น้องเฮเลน",
-    pic: "pic/9FA559C9-A39F-4E6E-93D9-46CE13080746.JPG",
+    name: 'อูนิ',
+    pic: 'pic/uni1.jpg',
+    sex: 'Male',
+    age: 3,
+    breed: 'Scottish Fold',
+    color: 'Tabby Orange',
     detail:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus placerat felis, a eleifend arcu facilisis eget. Quisque sit amet porttitor enim, nec congue eros. Suspendisse potenti. Pellentesque ut finibus purus. Etiam id lorem ac odio aliquet iaculis quis ac justo. Nullam elit dui, vehicula sed lectus sed, bibendum dapibus justo. Duis tincidunt aliquet dictum. Nulla luctus massa eget quam rhoncus, id pharetra ex vehicula.",
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus placerat felis, a eleifend arcu facilisis eget. Quisque sit amet porttitor enim, nec congue eros. Suspendisse potenti. Pellentesque ut finibus purus. Etiam id lorem ac odio aliquet iaculis quis ac justo. Nullam elit dui, vehicula sed lectus sed, bibendum dapibus justo. Duis tincidunt aliquet dictum. Nulla luctus massa eget quam rhoncus, id pharetra ex vehicula.',
     category: [
-      { label: "โคล่า", link: "http://www.google.com/" },
-      { label: "ชานม", link: "http://www.youtube.com/" },
-      { label: "กาแฟ", link: "http://www.facebook.com/" },
+      { label: 'Scottish Fold', link: 'http://www.google.com/' },
+      { label: 'Tabby Orange', link: 'http://www.facebook.com/' },
+      { label: 'Male', link: 'http://www.youtube.com/' },
     ],
     //   cat: ['โคล่า','ชานม','กาแฟ'],
-    thumbnail: ["pic/IMG_5538.jpg", "pic/IMG_5547.jpg", "pic/IMG_6083.jpg"],
+    thumbnail: ['pic/uni2.jpg', 'pic/uni3.jpg', 'pic/uni4.jpg'],
   },
 ];
