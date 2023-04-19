@@ -1,16 +1,5 @@
-import { useState, useEffect } from 'react';
-import { list } from '@/utils/constants';
 import Link from 'next/link';
-import { Category, Content, Detail, Photo, Thumbnail, Name } from './styled';
-import styled from 'styled-components';
-
-const Card = styled.div`
-  background-color: white;
-  padding: 20px 20px;
-  border: 1px solid black;
-  border-radius: 5px;
-  box-shadow: 10px 10px;
-`;
+import { Category, Detail, Photo, Name, Card, Button } from './styled';
 
 function CatCard({
   item,
@@ -32,46 +21,26 @@ function CatCard({
   };
 }) {
   return (
-    <Card className="my-4">
-      <div className="row">
-        <div className="col-12 col-sm-3 col-md-5 text-center">
-          <Photo src={item.pic} className="photo" />
+    <div className="col-12 col-md-4 p-3 ">
+      <Card className=" text-center">
+        <Photo src={item.pic} className="photo" />
+        <div className="content">
+          <Name className="my-3">{item.name}</Name>
+          <div className="row">
+            <div className="col-4">Age</div>
+            <div className="col-4 pr-2">Sex</div>
+            <div className="col-4 pr-3">Breed</div>
+            <Detail className="col-4">{item.age}</Detail>
+            <Detail className="col-4 pr-2">{item.sex}</Detail>
+            <Detail className="col-4 pr-4">{item.breed}</Detail>
+          </div>
+          <Link href={`/cats/${item.id}`}>
+            {' '}
+            <Button className="btn btn-block mt-4">More Details</Button>{' '}
+          </Link>
         </div>
-        <div className="col-12 col-sm-9 col-md-7">
-          <Content className="content">
-            <Link href={`/cats/${item.id}`}>
-              {' '}
-              <Name className="name">{item.name}</Name>{' '}
-            </Link>
-            <Detail className="detail mb-2">
-              {item.detail}
-              {/* <a href="#">อ่านต่อ</a> */}
-            </Detail>
-            <Category className="category">
-              หมวด:{' '}
-              {item.category.map(
-                (category: { label: string; link: string }) => {
-                  return (
-                    <a
-                      key={category.link}
-                      className="ml-1"
-                      href={category.link}
-                    >
-                      {category.label}
-                    </a>
-                  );
-                },
-              )}
-            </Category>
-            <Thumbnail className="d-flex ">
-              {item.thumbnail.map((img: any) => {
-                return <img key={img} src={img} className="img-fluid" />;
-              })}
-            </Thumbnail>
-          </Content>
-        </div>
-      </div>
-    </Card>
+      </Card>
+    </div>
   );
 }
 

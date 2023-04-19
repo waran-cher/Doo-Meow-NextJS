@@ -3,7 +3,7 @@ export interface ICat {
   name: string;
   pic: string;
   sex: string;
-  age: number;
+  age: string;
   breed: string;
   color: string;
   detail: string;
@@ -20,7 +20,7 @@ export const list: ICat[] = [
     name: 'หอมแดง ไตรมาส',
     pic: 'pic/hom1.jpg',
     sex: 'Female',
-    age: 2,
+    age: '2 years',
     breed: 'Scottish Fold',
     color: 'Tabby Silver',
     detail:
@@ -37,7 +37,7 @@ export const list: ICat[] = [
     name: 'โมจิ',
     pic: 'pic/moji3.jpg',
     sex: 'Male',
-    age: 3,
+    age: '3 years',
     breed: 'Scottish Fold',
     color: 'Silver Blue',
     detail:
@@ -54,7 +54,7 @@ export const list: ICat[] = [
     name: 'อูนิ',
     pic: 'pic/uni1.jpg',
     sex: 'Male',
-    age: 3,
+    age: '11 months',
     breed: 'Scottish Fold',
     color: 'Tabby Orange',
     detail:

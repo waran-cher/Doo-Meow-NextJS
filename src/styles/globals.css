@@ -1,16 +1,21 @@
+@import 'Navbar.css';
+
+@font-face {
+  font-family: 'Donut'; /*Can be any text*/
+  src: local('Donut'), url('../../public/fonts/MN-Donut.ttf') format('truetype');
+}
+
 body {
   font-family: 'Noto Sans Thai', sans-serif;
-  background-color: #dafab0;
 }
 .d-flex {
   gap: 20px;
 }
 .form-control {
-  color: black;
+  color: #665a48;
 }
 .form-control:focus {
-  color: black;
-  border: 1px solid black;
+  color: #665a48;
 }
 ::placeholder {
   font-weight: 100;

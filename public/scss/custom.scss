@@ -1,0 +1,17 @@
+
+$body-bg: #F3E9DD;
+$body-color: #111;
+$theme-colors: (
+    "primary": #DAB88B,
+    "secondary": #B7CADB,
+    "light-baige": #FDF6EC,
+    "baige": #e6daca,
+    "brown": #8B7E74,
+    "dark-brown": #665A48,
+    "green": #9BA17B,
+    "dark-green": #878c6a,
+    "grey": #313131,
+    "very-dark-brown": #614124
+    );
+
+@import "../../node_modules/bootstrap/scss/bootstrap";

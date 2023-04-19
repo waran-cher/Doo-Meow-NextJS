@@ -5,27 +5,33 @@ import CatCard from '@/components/cat/cat-card';
 import styled from 'styled-components';
 
 const Input = styled.input`
+  height: 40px;
   border: none;
-  border: 1px solid black;
-  border-radius: 0px;
   background-color: white;
+  cursor: pointer;
   :focus {
     background-color: white;
   }
 `;
+const Submitbutton = styled.button`
+  width: 80px;
+  border-radius: 0px 0px 0px 0px;
+  &:hover {
+    background-color: #878c6a;
+  }
+`;
 
 const Head = styled.div`
-  background-color: #ffb4da;
   max-width: 300px;
   text-align: center;
-  border-radius: 50px;
-  border: 1px solid black;
-  box-shadow: 5px 5px;
   h1 {
+    font-family: 'Donut';
     text-align: center;
-    color: black;
-    font-size: 45px;
-    padding-top: 10px;
+    color: #df7861;
+    font-size: 100px;
+    font-weight: 100;
+
+    text-shadow: 5px 3px #614124;
   }
 `;
 
@@ -56,28 +62,39 @@ function Home() {
   return (
     <>
       <div className="container">
-        <Head className="mt-5 text-center mx-auto">
+        <Head className="mt-5 text-center mx-auto ">
           <h1>
             <b>ดูแมวไหนดี</b>
           </h1>
         </Head>
         <br />
         <form onSubmit={onSubmit}>
-          <Input
-            id="query"
-            type="text"
-            className="form-control shadow-none text-center w-100 -color"
-            placeholder="พิมพ์ชื่อแมวตรงนี้"
-            value={value}
-            onChange={onChange}
-          />
-          <input type="submit" hidden />
+          <div className="d-flex justify-content-center">
+            <div className="input-group w-100">
+              <Input
+                id="query"
+                type="text"
+                className="form-control shadow-none text-center rounded-left"
+                placeholder="พิมพ์ชื่อแมวตรงนี้"
+                value={value}
+                onChange={onChange}
+              />
+              <input type="submit" hidden />
+              <Submitbutton
+                className="btn bg-green text-white text-center pt-2 rounded-right"
+                onClick={onSubmit}
+              >
+                Enter
+              </Submitbutton>
+            </div>
+          </div>
         </form>
 
-        {/* <Link href="/cats/1">ghfhgvnv</Link> */}
-        {filteredList.map((item) => {
-          return <CatCard key={item.id} item={item} />;
-        })}
+        <div className="row">
+          {filteredList.map((item) => {
+            return <CatCard key={item.id} item={item} />;
+          })}
+        </div>
       </div>
     </>
   );
